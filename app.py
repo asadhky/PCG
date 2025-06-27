@@ -3,8 +3,7 @@ import os
 
 app = Flask(__name__)
 UPLOAD_FOLDER = 'uploads'
-# ALLOWED_IP = '20.218.226.24'
-ALLOWED_IP = '127.0.0.1'
+ALLOWED_IP = '20.218.226.24'
 
 if not os.path.exists(UPLOAD_FOLDER):
     os.makedirs(UPLOAD_FOLDER)
