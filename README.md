@@ -32,5 +32,9 @@ A simple web application that allows users to upload and delete images using a c
    pip install -r requirements.txt
 
 3. **Run the application**
-  ```bash
-  python app.py
+   ```bash
+   python app.py
+
+4. **Open the app in your browser**
+   ```bash
+   http://127.0.0.1:5000
