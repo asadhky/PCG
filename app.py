@@ -3,7 +3,7 @@ import os
 
 app = Flask(__name__)
 UPLOAD_FOLDER = 'uploads'
-ALLOWED_IP = '20.218.226.24'
+ALLOWED_IP = '20.218.226.24' # Edit this to change the whitelisted IP
 
 if not os.path.exists(UPLOAD_FOLDER):
     os.makedirs(UPLOAD_FOLDER)
@@ -22,7 +22,7 @@ def forbidden(e):
 def index():
     return render_template('index.html')
 
-@app.route('/upload', methods=['POST'])
+@app.route('/upload', methods=['POST']) # For uploading the files
 def upload_image():
     if 'image' not in request.files:
         return jsonify({'error': 'No image part'}), 400
@@ -34,7 +34,7 @@ def upload_image():
     file.save(filepath)
     return jsonify({'message': 'Image uploaded', 'filename': file.filename})
 
-@app.route('/images', methods=['GET'])
+@app.route('/images', methods=['GET']) # Where the images get stored
 def list_images():
     files = os.listdir(UPLOAD_FOLDER)
     return jsonify(files)
